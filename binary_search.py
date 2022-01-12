@@ -43,7 +43,7 @@ def binary_search(l, target, low=None, high=None):
     if low is None:       #we want the lowest possible index that we can  check, so if low is not defined,
         low = 0           #it defaults to lowest possible index
     if high is None:
-        high = len(l) -1  #high defaults to the number of elements -1 because number of elements is counted from 1 but indexing begins with 0
+        high = len(l) -1  `#high defaults to the number of elements -1 because number of elements is counted from 1 but indexing begins with 0`
     
     if high < low:                                           #this code checks if target is in the list, the only time high is smaller than low is
         print(f"target {target} not found in a list")        #if target isnt in the list
@@ -54,15 +54,15 @@ def binary_search(l, target, low=None, high=None):
     if l[midpoint] == target:
         return midpoint
     elif target < l[midpoint]:
-        return binary_search(l, target, low, midpoint-1)   #basicaly, returns an updated binary_search fucntion where high default value is now one number less than before and runs the fucntion again
+        return binary_search(l, target, low, midpoint-1)   #basicaly, returns an updated binary_search fucntion where high default value is now the value of midpoint -1
     else:
         #in other words target > l(midpoint)
-        return binary_search(l, target, midpoint+1, high)  #returns an updated binary_search fucntion where low default value is now one number higher than before and runs the fucntion again
+        return binary_search(l, target, midpoint+1, high)  #returns an updated binary_search fucntion where low default value is n0w the value of midpoint +1
 
 if __name__ == "__main__":
     # comment out the code to test if fucntions work
     # l = [1, 3, 5, 8, 12]
-    # target = 13
+    # target = 5
     # print(naive_search(l, target))
     # print(binary_search(l, target))
 
